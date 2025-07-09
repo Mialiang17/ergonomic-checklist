@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ergonomic Monitor Checklist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h3 {
+      color: #2c7be5;
+    }
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+    button {
+      padding: 8px 16px;
+      background-color: #2c7be5;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>✅ Bonus: Quick Checklist for Ergonomic Screen Setup at Home</h3>
+  <form id="ergonomicChecklist">
+    <label><input type="checkbox" name="item"> Top of monitor is at eye level</label>
+    <label><input type="checkbox" name="item"> Center of monitor is 15–20° below eye line</label>
+    <label><input type="checkbox" name="item"> Distance from eyes: 20–28 inches</label>
+    <label><input type="checkbox" name="item"> IPS panel for wide viewing angle</label>
+    <label><input type="checkbox" name="item"> Use a height adjustable monitor or stand</label>
+    <label><input type="checkbox" name="item"> Screen tilts backward slightly (10–15°)</label>
+    <label><input type="checkbox" name="item"> No glare or bright window directly behind the screen</label>
+    <label><input type="checkbox" name="item"> Monitor directly in front of you (not angled left/right)</label>
+    <br>
+    <button type="button" onclick="checkErgonomics()">Check My Setup</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    function checkErgonomics() {
+      const items = document.querySelectorAll('input[name="item"]');
+      let checked = 0;
+      items.forEach(item => {
+        if (item.checked) checked++;
+      });
+
+      const result = document.getElementById('result');
+      const total = items.length;
+
+      if (checked === total) {
+        result.innerHTML = "✅ Great job! Your ergonomic setup looks perfect.";
+        result.style.color = "green";
+      } else if (checked >= total - 2) {
+        result.innerHTML = `🟡 Almost there! You've completed ${checked} out of ${total} items. A few small tweaks can make your setup even better.`;
+        result.style.color = "orange";
+      } else {
+        result.innerHTML = `⚠️ You've only completed ${checked} out of ${total} items. It might be time to recheck your setup for better comfort.`;
+        result.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
