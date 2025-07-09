@@ -6,12 +6,9 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 0;
-      margin: 0;
-    }
-    .container {
-      padding: 0;
-      margin: 0;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
     }
     label {
       display: block;
@@ -34,22 +31,20 @@
 </head>
 <body>
 
-  <div class="container">
-    <form id="ergonomicChecklist">
-      <label><input type="checkbox" name="item"> Top of monitor is at eye level</label>
-      <label><input type="checkbox" name="item"> Center of monitor is 15–20° below eye line</label>
-      <label><input type="checkbox" name="item"> Distance from eyes: 20–28 inches</label>
-      <label><input type="checkbox" name="item"> IPS panel for wide viewing angle</label>
-      <label><input type="checkbox" name="item"> Use a height adjustable monitor or stand</label>
-      <label><input type="checkbox" name="item"> Screen tilts backward slightly (10–15°)</label>
-      <label><input type="checkbox" name="item"> No glare or bright window directly behind the screen</label>
-      <label><input type="checkbox" name="item"> Monitor directly in front of you (not angled left/right)</label>
-      <br>
-      <button type="button" onclick="checkErgonomics()">Check My Setup</button>
-    </form>
+  <form id="ergonomicChecklist">
+    <label><input type="checkbox" name="item"> Top of monitor is at eye level</label>
+    <label><input type="checkbox" name="item"> Center of monitor is 15–20° below eye line</label>
+    <label><input type="checkbox" name="item"> Distance from eyes: 20–28 inches</label>
+    <label><input type="checkbox" name="item"> IPS panel for wide viewing angle</label>
+    <label><input type="checkbox" name="item"> Use a height adjustable monitor or stand</label>
+    <label><input type="checkbox" name="item"> Screen tilts backward slightly (10–15°)</label>
+    <label><input type="checkbox" name="item"> No glare or bright window directly behind the screen</label>
+    <label><input type="checkbox" name="item"> Monitor directly in front of you (not angled left/right)</label>
+    <br>
+    <button type="button" onclick="checkErgonomics()">Check My Setup</button>
+  </form>
 
-    <p id="result"></p>
-  </div>
+  <p id="result"></p>
 
   <script>
     function checkErgonomics() {
