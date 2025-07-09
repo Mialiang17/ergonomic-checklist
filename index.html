@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Ergonomic Monitor Checklist</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-    }
-    ul {
-      padding-left: 40px;
+      padding: 0;
       margin: 0;
     }
-    li {
-      margin: 8px 0;
-      list-style: disc;
+    .container {
+      padding: 0;
+      margin: 0;
     }
     label {
-      cursor: pointer;
-      user-select: none;
+      display: block;
+      margin: 10px 0;
     }
     button {
       padding: 8px 16px;
@@ -29,8 +24,6 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      margin-top: 15px;
-      display: block;
     }
     #result {
       margin-top: 20px;
@@ -41,22 +34,22 @@
 </head>
 <body>
 
-  <form id="ergonomicChecklist">
-    <ul>
-      <li><label><input type="checkbox" name="item"> Top of monitor is at eye level</label></li>
-      <li><label><input type="checkbox" name="item"> Center of monitor is 15–20° below eye line</label></li>
-      <li><label><input type="checkbox" name="item"> Distance from eyes: 20–28 inches</label></li>
-      <li><label><input type="checkbox" name="item"> IPS panel for wide viewing angle</label></li>
-      <li><label><input type="checkbox" name="item"> Use a height adjustable monitor or stand</label></li>
-      <li><label><input type="checkbox" name="item"> Screen tilts backward slightly (10–15°)</label></li>
-      <li><label><input type="checkbox" name="item"> No glare or bright window directly behind the screen</label></li>
-      <li><label><input type="checkbox" name="item"> Monitor directly in front of you (not angled left/right)</label></li>
-    </ul>
+  <div class="container">
+    <form id="ergonomicChecklist">
+      <label><input type="checkbox" name="item"> Top of monitor is at eye level</label>
+      <label><input type="checkbox" name="item"> Center of monitor is 15–20° below eye line</label>
+      <label><input type="checkbox" name="item"> Distance from eyes: 20–28 inches</label>
+      <label><input type="checkbox" name="item"> IPS panel for wide viewing angle</label>
+      <label><input type="checkbox" name="item"> Use a height adjustable monitor or stand</label>
+      <label><input type="checkbox" name="item"> Screen tilts backward slightly (10–15°)</label>
+      <label><input type="checkbox" name="item"> No glare or bright window directly behind the screen</label>
+      <label><input type="checkbox" name="item"> Monitor directly in front of you (not angled left/right)</label>
+      <br>
+      <button type="button" onclick="checkErgonomics()">Check My Setup</button>
+    </form>
 
-    <button type="button" onclick="checkErgonomics()">Check My Setup</button>
-  </form>
-
-  <p id="result"></p>
+    <p id="result"></p>
+  </div>
 
   <script>
     function checkErgonomics() {
